@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
- const userSchema = mongoose.Schema ({
+ const userSchema = new mongoose.Schema ({
     username: {
         type : String,
         required : true,
@@ -17,6 +17,8 @@ import mongoose from "mongoose";
         required : true,
         trim : true
     }
+},{
+    timestamps: true,  // añade createdAt y updatedAt fields
 })
 
 export default mongoose.model('User', userSchema);
